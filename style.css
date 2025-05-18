@@ -1,0 +1,414 @@
+/* setting the full page margin and padding to 0 */
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/* loading screen config */
+
+.loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.8); /* semi-transparent background */
+    backdrop-filter: blur(10px); /* blur effect */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; /* ensure loader is on top */
+  }
+  
+  
+  /* setting up loader screen */
+  .loader img {
+    width: 100px; /* Adjust logo size */
+    height: 100px; /* Adjust logo size */
+    border-radius: 50%;
+  }
+  
+  .spinner {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 8px solid rgba(0, 0, 0, 0.1);
+    border-top: 8px solid #3498db;
+    border-radius: 50%;
+    width: 120px; /* Adjust spinner size */
+    height: 120px; /* Adjust spinner size */
+    animation: spin 1s linear infinite;
+  }
+  
+  @keyframes spin {
+    0% {
+      transform: translate(-50%, -50%) rotate(0deg);
+    }
+    100% {
+      transform: translate(-50%, -50%) rotate(360deg);
+    }
+  }
+  
+/* settimg the navbar container to allow the inner element to be position to the way it will look */
+.navbar{
+    background: linear-gradient(blue, white, blue);
+    overflow: visible;
+    border-radius: 3px;
+    top: 0;
+    left: 0;
+    position: relative;
+    text-align: center;
+    width: 100%;
+    height: 60px;
+    z-index: 100;
+}
+
+/*allows inner elements to oversize the parent nav */
+nav{
+    overflow: visible; 
+    margin-left: auto;
+
+}
+
+/* 
+ * Styles for the navbar's unordered list.
+ * Removes default list styling, positions the navbar to the right,
+ * and adjusts margins for layout.
+ */
+.navbar nav ul{
+    list-style: none;
+    padding: 0;
+    overflow: visible;
+    float: right;/* Moving the nav bar to the right side of the page */
+    margin: 0 20px 10px;
+}
+
+/* Display inline on th <li> items to display horizontally, rather than vertically,
+ which is often the desired behaviour for navigation menus*/
+.navbar nav ul li{
+    display: inline;
+}
+
+/* 
+ * Styles for navbar link elements.
+ * Defines font, color, and visual effects for a visually appealing navigation menu.
+ */
+.navbar nav ul li a{
+    font-size: 25px;
+    font-weight: bold;
+    text-decoration: solid;
+    color: solid white;
+    text-decoration: none;  /* Remove default underline */
+    text-shadow: 0px 0px 5px #000;/* Add subtle text shadow */
+    transition: transform 0.2s
+    ease-in-out;/*means that the animation will start slowly,speed up or down 
+    over the specific duration */
+    display: inline-block;/* Display links as inline blocks and also enable smooth transition hover effects*/
+}
+
+
+/* 
+ * Hover effect for navbar links.
+ * Scales the link up slightly for visual feedback.
+ */
+.navbar nav ul li a:hover{
+    transform: scale(1.1);/* Enlarge the link on hover */
+}
+
+/* 
+ * Reset and layout styles for the navbar's unordered list.
+ * Removes default list styling and enables flexbox layout.
+ */
+nav ul{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+/* 
+ * Styles for individual list items in the navbar.
+ * Adds spacing between items and establishes a stacking context.
+ */
+nav ul li{
+    margin-right: 20px; /* Add horizontal spacing between list items */
+    position: relative;/* Create a positioning context for absolute children */
+    z-index: 1;/* Establish a base stacking order for dropdowns or other elements*/
+}
+
+/* 
+ * Establish a positioning context for absolutely positioned descendants.
+ * Allows dropdown menus to be positioned relative to the toggle element.
+ */
+.dropdown-toggle{
+    position: relative;
+    color: black;
+    font-size: 22px;
+    margin-left: auto;
+}
+
+/* 
+ * Styles for the dropdown menu.
+ * Positions the menu absolutely below its parent,
+ * with a defined width, background, and border.*/
+.dropdown-menu{
+    position: absolute;/* Position relative to the nearest positioned ancestor */
+    top: 100%;/* Place the menu below its parent */
+    left: 0;/* Align the menu with the left edge of its parent */
+    background-color: rgba(255, 255, 255, 0.8); /* semi-transparent background */
+    backdrop-filter: blur(10px); /* blur effect */
+    border: 1px solid #ccc;
+    padding: 10px;/* Add padding for content spacing */
+    display: none;/* Hide the menu by default */
+    overflow: visible;/* Allow content to overflow without clipping */
+    width: 200px;/* Set a fixed width for the menu */
+    transform: translateX(-20px);/* Adjust the menu's horizontal position */
+    z-index: 2;/* Ensure the menu appears above other elements */
+}
+
+
+
+/*add a horizontal line at the bottom of each li*/
+.dropdown-menu li{
+    margin-bottom: 10px;
+    
+    
+}
+
+.dropdown-menu a:hover{
+    color: blue;
+    transform: scale(1.1);
+}
+/* adding shadow to the text and setting foreground color to white  */
+.dropdown-menu a{
+    color: black;
+    text-shadow: 0px 0px 10px rgb(0,0,255,0.5);
+    font-family: Arial, Helvetica, sans-serif;
+    display: block; /* or display: inline-block; */
+    transition: all 0.2s ease-in-out; /* Optional, for a smooth transition */
+    
+      
+}
+
+/* Setting display: block makes the dropdown menu visible when its parent is hovered. Else the display: none;
+wont make the menu visible when hovered*/
+.dropdown-menu.show{
+    display:block;
+}
+
+.search-content{
+    display: flex;
+    align-items: center;
+    margin: 40px;
+}
+
+/* search bar config */
+.search-box {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+  
+  }
+  
+  #search-input {
+    padding: 10px;
+    border: 2px solid #ccc;
+    border-radius: 5px 0 0 5px;
+    width: 300px;
+  }
+  
+  #search-button {
+    padding: 10px;
+    border: none;
+    border-radius: 0 5px 5px 0;
+    background-color: blue;
+    color: #fff;
+    cursor: pointer;
+  }
+  /* suggestions label config */
+  #search-button:hover {
+    background-color: #3e8e41;
+  }
+
+  /* Filtering for games and letting it show in the middle without scrolling */
+  .highlighted {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    background-color: #fff; /* Add a background color to make the element visible */
+    padding: 20px; /* Add some padding to make the element look better */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Add a box shadow to make the element look better */
+  }
+  
+  
+
+  #suggestions {
+    position: absolute;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    padding: 10px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  #suggestions li {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+    cursor: pointer;
+  }
+  
+  #suggestions li:hover {
+    background-color: #f0f0f0;
+  }
+  
+  
+  
+  
+  
+
+/*set the text to the middle*/
+.h1{
+    text-align: center;
+}
+
+/* game boxes h4 display large */
+h4{
+  font-size: 20px;
+}
+
+/* setting the h1 display */
+h1{
+    color: white;
+    text-align: center;/*it place the h1 text to the middle */
+    text-shadow: 0px 0px 5px #000;/* adding shadow to header text */
+}
+/* Link Decoration */
+a{
+    color: white;
+    list-style: none;
+    text-decoration: none;
+    padding: 10px;
+}
+
+
+/* Creating space space around the h3 element */
+h3{
+    padding-left: 20px;
+    margin-left: 40px;
+}
+
+/* Creating space around the text element */
+#text{
+    margin-top: 30px;
+}
+p{
+    margin-top: 50px;
+    margin-left: 42px;
+    padding: 40px 20px 10px;
+}
+
+/* Provides a block-level display with margins, border, and overflow handling.*/
+.container{
+   display: block;
+   margin: 20px;
+   border-color: solid black;
+   overflow: auto;
+   position: relative;
+}
+
+/* removing blur effects from active hovered box, and making the rest blured */
+.box:hover~.box:not(:hover){
+    filter: blur(2px);
+    opacity: 0.5;
+}
+
+/* determines what will happen when the div box is hovered */
+.box:hover{ 
+    transform: scale(1.1) translateY(-10px);
+    box-shadow: 0 0 20px rgb(0, 0, 255, 0.5);
+    z-index: 10;
+    cursor: grab;
+    
+}
+
+/* Uses flexbox to ensure content is centered within a fixed height container. */
+.wrapper{
+     position: relative;
+     display: flex;
+     overflow: visible;
+     justify-content: center;
+     align-items: center;
+     height: 300px;
+     margin: 50px 30px;
+    
+}
+
+/* setting up divs to have an animated effect */
+ .box{
+    height: 100%;
+    width: 400px;
+    background: linear-gradient(to bottom right , white, blue, blue);
+    margin: 20px;
+    border-radius:10px;
+    box-shadow: 0px 0px 10px rgb(0,0,255,0.5);
+    position: relative;
+    transition: transform 0.5s ease-in-out, z-index 0.5s ease-in-out;
+    z-index: 1;
+}
+
+/* set the background color of the footer */
+footer{
+    background: grey;
+}
+
+/* make image fit in the div container without stretching */
+.box img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+/* this show that the link is active or you already in that link */
+.category-link.active {
+  color: red;
+}
+
+/* Navigation buttons for next and previous page */
+.pages{
+  font-size: 22px;
+  color: white;
+  background-color: blue;
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  margin: 20px;
+}
+
+/* Navigation button parent divs */
+.pages_button{
+  display: flex;
+  justify-content: center;
+}
+
+/* Adding hover effect to navigation buttons */
+.pages:hover{
+  color: white;
+  background: #3e8e41;
+  cursor: pointer;
+}
+
+
+.wrapper.wrapper-action {
+  display: none !important;
+}
+
+.wrapper.sports-games2{
+  display: none !important;
+}
+
