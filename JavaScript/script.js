@@ -203,30 +203,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
 });
 
-function nextPage() {
-  document.querySelectorAll('.default-wrapper').forEach(wrapper => {
-    wrapper.style.setProperty('display', 'none', 'important');
-  });
-  document.querySelectorAll('.wrapper-action').forEach(wrapper => {
-    wrapper.style.setProperty('display', 'flex', 'important');
-  });
-  document.querySelector('.prev-button').style.setProperty('display', 'block', 'important');
-  document.querySelector('.next-button').style.display = 'block';
-}
-/**
- * Navigate to the previous page by showing default wrappers, 
- * hiding action wrappers, and updating navigation button visibility.
- */
-function prevPage() {
-  document.querySelectorAll('.default-wrapper').forEach(wrapper => {
-    wrapper.style.display = 'flex';
-  });
-  document.querySelectorAll('.wrapper-action').forEach(wrapper => {
-    wrapper.style.display = 'none';
-  });
-  document.querySelector('.prev-button').style.display = 'none';
-  document.querySelector('.next-button').style.display ='block';
-}
 
  
   

@@ -352,7 +352,7 @@ p{
  .box{
     height: 100%;
     width: 400px;
-    background: linear-gradient(to bottom right , white, blue, blue);
+    /* background: linear-gradient(to bottom right , white, blue, blue); */
     margin: 20px;
     border-radius:10px;
     box-shadow: 0px 0px 10px rgb(0,0,255,0.5);
@@ -380,35 +380,115 @@ footer{
 }
 
 /* Navigation buttons for next and previous page */
-.pages{
+#pages{
   font-size: 22px;
   color: white;
   background-color: blue;
   border: none;
-  padding: 10px;
+  padding: 8px;
   border-radius: 5px;
   margin: 20px;
-}
-
-/* Navigation button parent divs */
-.pages_button{
-  display: flex;
-  justify-content: center;
-}
+} 
 
 /* Adding hover effect to navigation buttons */
-.pages:hover{
+#pages:hover{
   color: white;
   background: #3e8e41;
   cursor: pointer;
 }
-
-
-.wrapper.wrapper-action {
-  display: none !important;
+ 
+.pagination-container {
+  text-align: center;
+  margin-bottom: 20px;
+}
+.pagination {
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+}
+.pagination li {
+  display: inline;
+  margin-right: 10px;
+}
+.pagination-button {
+  font-size: 18px;
+  color: white;
+  background-color: blue;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.pagination-button:hover {
+  color: white;
+  background: #3e8e41;
+}
+#pagination-info {
+  font-size: 18px;
+  color: black;
+  margin: 0 10px;
+}
+.pagination-button .fa-solid {
+  font-size: larger;
 }
 
-.wrapper.sports-games2{
-  display: none !important;
-}
+
+
+
+
+/* @media only screen and (min-width:360px) and (max-width: 540px) {
+  body {
+     font-size: 14px; }
+  .navbar{
+    width: 140%;
+     height: 40px;}
+ 
+  .dropdown-toggle span {
+    display: none; }
+  .search-box{
+    width: 100%;}
+    .search-content{
+    display: flex;
+    align-items: center;
+    margin: 40px;
+    }
+  .dropdown-toggle i{
+    margin-left: 30px;}
+  #text{
+    font-size: small;}
+  .wrapper{
+    height: 120px; 
+    margin-bottom: 80px;}
+  .box > h4 {
+    padding: auto;
+     font-size: medium;}
+  .box{
+    width: 250px;
+  margin-left: 10px;}
+  .box img{width: 100%;
+    height: 100%;
+    object-fit: fill;}
+  .container{
+    width: 470px; 
+    overflow: hidden;
+    margin-left: 15px;
+  }
+  footer{
+    width:140%;
+    margin-bottom: auto;
+  }
+ 
+} */
+
+  
+
+
+/* *Tablets/your phone size (720px - 1024px)* */
+
+/* @media only screen and (min-width: 720px) and (max-width: 1024px) {
+  body { font-size: 16px; }
+  .menu { display: block; font-size: 14px; }
+  .logo { width: 120px; }
+  .button { padding: 10px 20px; }
+} */
 
