@@ -772,13 +772,14 @@ progress {
     color: var(--bs-secondary-color)
 }
 
-.container,
-.container-fluid,
+
+/* .container-fluid,
 .container-lg,
 .container-md,
 .container-sm,
 .container-xl,
-.container-xxl {
+.container-xxl */
+.container{
     --bs-gutter-x: 1.5rem;
     --bs-gutter-y: 0;
     width: 100%;
@@ -788,9 +789,9 @@ progress {
     margin-left: auto
 }
 
-@media (max-width:599px) {
+@media (max-width:600px) {
 
-    .page-content,.page-content-sm {
+    .page-content /*,.page-content-sm*/ {
         max-width: 100%;
         max-width: 100%;
     }
@@ -798,10 +799,13 @@ progress {
     .search-content {
         max-width: 100%;
         min-width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
     }
 
     .search-box {
-        max-width: 245px;
+       width: 100%;
         margin: 0 auto;
         left: 20px;
     }
@@ -810,46 +814,75 @@ progress {
         font-size: smaller;
     }
 
-    #text p,#text h3 {
+    #text p, #text h3 {
         color: white;
         transform: translateX(-40px);
         /*shifting to left side*/
 
     }
+    .dropdown-menu{
+        width: 100px !important;
+    }
 
     .wrapper {
         width: 100%;
-        height: 250px !important;
+        height: 210px !important;
         margin: 0 auto;
-        right: 20px;
+        /* right: 20px; */
         
+    }
+    .box{
+        margin: 20px 10px!important;
     }
     .container{
         overflow: hidden !important;
+        width: 100%;
+    }
+    footer{
+       width: 100%;
     }
 
 } 
 
-@media (min-width:600px) {
+@media (max-width:720px)/*Specifically for my TECNO Spark 30c*/ {
 
-    .page-content,
-    .page-content-md,
-    .page-content-sm {
-        max-width: 100%;
-        max-width: 100%;
+    .page-content
+    /* .page-content-md,
+    .page-content-sm */
+     {
+        width: 100%;
+        flex-grow: 1;
+
     }
-
+    main{
+        height: 100%;
+}
     #text p, #text h3 {
         color: white;
         transform: translateX(-40px);/*shifting to left side */
 
     }
+     .search-content {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+     .search-box {
+        width: 100%;
+        margin: 0 auto;
+    }
+    .container{
+        overflow: hidden !important;
+        width: 100%;
+    }
     .wrapper {
         width: 100%;
-        height: 270px !important;
+        /* height: 270px !important; */
         margin: 0 auto;
         user-select: none;
     }
+    
 }
 
 @media (min-width:992px) {
@@ -860,6 +893,9 @@ progress {
     .page-content-sm {
         max-width: 100%;
         max-width: 100%;
+    }
+    .box{
+        width: 400px !important;
     }
 }
 
