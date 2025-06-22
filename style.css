@@ -4,7 +4,12 @@
      /* border: solid red; */
 }
  body{
-    background: linear-gradient(blue, white, blue);
+    background-image: url('dark-blue-abstract-background-with-bubbles.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    /* background: linear-gradient(blue, white, blue); */
     padding: 0;
     margin: 0;
     min-height: 100vh;
@@ -123,7 +128,7 @@
 }
 .header{
     border-bottom: 1px solid black;
-   box-shadow: 0px 0px 10px rgb(0,0,255,0.5);
+   /* box-shadow: 0px 0px 10px rgb(0,0,255,0.5); */
 }
 /* * Establish a positioning context for absolutely positioned descendants. * Allows dropdown menus to be positioned relative to the toggle element. */
  .dropdown-toggle{
@@ -313,7 +318,7 @@
 /* setting up divs to have an animated effect */
  .box{
      height: 100%;
-     width: 400px;
+     width: auto;
      margin: 20px;
      border-radius:10px;
      box-shadow: 0px 0px 10px rgb(0,0,255,0.5);
@@ -383,7 +388,7 @@
 }
  #pagination-info {
      font-size: 18px;
-     color: white;
+     color: black;
      margin: 0 10px;
 }
  .pagination-button .fa-solid {
