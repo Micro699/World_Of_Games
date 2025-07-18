@@ -854,12 +854,15 @@ progress {
         flex-grow: 1;
 
     }
+    
     main{
         height: 100%;
 }
     #text p, #text h3 {
-        color: white;
+        color: black;
+        text-shadow: 0px 0px 5px #fff;
         transform: translateX(-40px);/*shifting to left side */
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 
     }
      .search-content {
